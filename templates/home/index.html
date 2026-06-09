@@ -71,5 +71,23 @@
 
     </div>
 
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+
+    <form method="POST" class="contact-form">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <input type="text" name="subject" placeholder="Subject" required>
+
+        <textarea name="message" placeholder="Your Message"></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+    </form>
 </section>
 {% endblock %}
