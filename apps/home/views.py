@@ -3,7 +3,7 @@ from apps.projects.models import Project
 from apps.contact.models import Contact
 
 def home(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by('-created_at')
     success = False
 
     if request.method == "POST":
