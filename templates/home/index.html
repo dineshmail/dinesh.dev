@@ -11,7 +11,11 @@
     <p>I build web applications with Python and Django. web development from scratch to fullstack webapp ". fully customized design and develop and responsive ui/ux and seo optimized.  </p>
     <div class="hero-btn">
         <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="static\resume\Web Programming with HTML5, CSS, and JavaScript.pdf" class="btn-secondary">Download Resume</a>
+
+{% if resume %}
+<a href="{{ resume.pdf.url }}"  download class="btn-secondary">Download Resume</a>
+{% endif %}
+
     </div>
     </div>
 </section>

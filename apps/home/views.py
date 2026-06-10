@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from apps.projects.models import Project
 from apps.contact.models import Contact
+from apps.resume.models import Resume
 
 def home(request):
     projects = Project.objects.all().order_by('-created_at')
@@ -15,11 +16,11 @@ def home(request):
         )
         success = True
 
-    return render(
-        request,
-        "home/index.html",
-        {
-            "projects": projects,
-            "success": success
-        }
-    )
+    resume = Resume.objects.first()
+    return render(request,"home/index.html",
+    {
+        "projects": projects,
+        "success": success,
+        "resume": resume,
+    }
+)
