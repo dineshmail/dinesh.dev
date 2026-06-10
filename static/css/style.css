@@ -252,3 +252,41 @@ body{
 .contact-form button:hover {
     background: #0099cc;
 }
+.stats{
+    padding:80px 10%;
+    background:#0f172a;
+    text-align:center;
+}
+
+.stats h2{
+    font-size:40px;
+    color:#38bdf8;
+    margin-bottom:50px;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-10px);
+}
+
+.stat-card h3{
+    font-size:40px;
+    color:#38bdf8;
+}
+
+.stat-card p{
+    color:white;
+    margin-top:10px;
+}
