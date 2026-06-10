@@ -43,35 +43,41 @@
     </div>
 
 </section>
-<section id="projects" class="projects">
+<section class="projects" id="projects">
+    
+{% for project in projects %}
 
-    <h2>My Projects</h2>
+<div class="project-card">
 
-    <div class="projects-grid">
+    <img
+        src="{{ project.image.url }}"
+        alt="{{ project.title }}"
+        class="project-image"
+    >
 
-        {% for project in projects %}
+    <h3>{{ project.title }}</h3>
 
-        <div class="project-card">
+    <p>{{ project.description }}</p>
 
-            <h3>{{ project.title }}</h3>
+    <div class="project-links">
 
-            <p>{{ project.description }}</p>
+        <a href="{{ project.github_link }}"
+           target="_blank">
+            GitHub
+        </a>
 
-            <a href="{{ project.github_link }}"
-               target="_blank">
-               GitHub
-            </a>
-
-        </div>
-
-        {% empty %}
-
-        <p>No projects available.</p>
-
-        {% endfor %}
+        {% if project.live_link %}
+        <a href="{{ project.live_link }}"
+           target="_blank">
+            Live Demo
+        </a>
+        {% endif %}
 
     </div>
 
+</div>
+
+{% endfor %}
 </section>
 <section class="contact" id="contact">
     <h2>Contact Me</h2>

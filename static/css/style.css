@@ -199,6 +199,19 @@ body{
     color:#cbd5e1;
     margin:10px 0;
 }
+.project-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.project-links{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
 .contact {
     background: #ffffff;
     padding: 80px 10%;
