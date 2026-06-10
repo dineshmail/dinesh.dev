@@ -290,3 +290,55 @@ body{
     color:white;
     margin-top:10px;
 }
+.footer{
+    background:#020617;
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.footer h3{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.footer p{
+    margin:10px 0;
+}
+
+.social-links{
+    margin:20px 0;
+}
+
+.social-links a{
+    color:#38bdf8;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:600;
+}
+
+.social-links a:hover{
+    color:white;
+}
+
+.copyright{
+    color:#94a3b8;
+    margin-top:20px;
+}
+
+.back-to-top{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:bold;
+}
