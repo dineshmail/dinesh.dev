@@ -11,7 +11,7 @@
     <p>I build web applications with Python and Django. web development from scratch to fullstack webapp ". fully customized design and develop and responsive ui/ux and seo optimized.  </p>
     <div class="hero-btn">
         <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#Download resume" class="btn-secondary">Download Resume</a>
+        <a href="static\resume\Web Programming with HTML5, CSS, and JavaScript.pdf" class="btn-secondary">Download Resume</a>
     </div>
     </div>
 </section>
@@ -73,6 +73,11 @@
 
 <section class="contact" id="contact">
     <h2>Contact Me</h2>
+    {% if success %}
+<div class="success-message">
+    Message sent successfully!
+</div>
+{% endif %}
 
     <form method="POST" class="contact-form">
         {% csrf_token %}

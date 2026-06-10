@@ -91,6 +91,22 @@ body{
     color: #7c9bc4;
     border: 2px solid #7c9bc4;
 }
+/*resume section*/
+ .btn-secondary{
+    display:inline-block;
+    padding:15px 30px;
+    border:2px solid #00cfff;
+    border-radius:8px;
+    color:#00cfff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:#00cfff;
+    color:white;
+}
 /*about section*/
 .about{
     padding: 100px 10%;
@@ -193,6 +209,14 @@ body{
     margin-bottom: 40px;
     font-size: 40px;
     color: #00cfff;
+}
+.success-message{
+    background:#28a745;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    text-align:center;
 }
 
 .contact-form {

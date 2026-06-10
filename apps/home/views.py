@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from apps.contact.models import Contact
 from apps.projects.models import Project
+from apps.contact.models import Contact
 
 def home(request):
-
     projects = Project.objects.all()
+    success = False
 
     if request.method == "POST":
         Contact.objects.create(
@@ -13,9 +13,13 @@ def home(request):
             subject=request.POST.get("subject"),
             message=request.POST.get("message")
         )
+        success = True
 
     return render(
         request,
         "home/index.html",
-        {"projects": projects}
+        {
+            "projects": projects,
+            "success": success
+        }
     )
