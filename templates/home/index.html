@@ -6,7 +6,8 @@
   <div class="hero-content">
     <h3>hello , im</h3>
     <h1>Dinesh k</h1>
-    <h2>Python Full Stack Developer</h2>
+    <h2><span id="typing"></span></h2>
+
     <p>
       I build web applications with Python and Django. web development from
       scratch to fullstack webapp ". fully customized design and develop and
@@ -48,12 +49,12 @@
   <h2>Skills</h2>
 
   <div class="skills-grid" data-aos="zoom-in">
-    <div class="skill-card">Python</div>
-    <div class="skill-card">Django</div>
-    <div class="skill-card">HTML5</div>
-    <div class="skill-card">CSS3</div>
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">Git & GitHub</div>
+    <div class="skill-card"><i class="fab fa-python"></i> Python</div>
+    <div class="skill-card"><i class="fab fa-django"></i> Django</div>
+    <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
+    <div class="skill-card"><i class="fab fa-css3"></i> CSS3</div>
+    <div class="skill-card"><i class="fab fa-js"></i> JavaScript</div>
+    <div class="skill-card"><i class="fab fa-github"></i> Git & GitHub</div>
     <div class="skill-card">SQL</div>
     <div class="skill-card">REST API</div>
   </div>
@@ -98,26 +99,34 @@
     </div>
 
 </section>
+
 <section class="contact" data-aos="fade-left" id="contact">
   <h2>Contact Me</h2>
-  {% if success %}
-  <div class="success-message">Message sent successfully!</div>
-  {% endif %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="success-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 
-  <form method="POST" class="contact-form">
+<form method="POST" class="contact-form">
+
     {% csrf_token %}
 
-    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="text" name="name" placeholder="Your Name" required>
 
-    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="email" name="email" placeholder="Your Email" required>
 
-    <input type="text" name="subject" placeholder="Subject" required />
+    <input type="text" name="subject" placeholder="Subject" required>
 
-    <textarea name="message" placeholder="Your Message"></textarea>
+    <textarea name="message" placeholder="Your Message" required></textarea>
 
     <button type="submit">Send Message</button>
-  </form>
+
+</form>
 </section>
+
 <section id="stats" data-aos="flip-left" class="stats">
   <h2>My Achievements</h2>
 
@@ -150,12 +159,13 @@
     <p>Python Full Stack Developer</p>
 
     <div class="social-links">
-      <a href="https://github.com/dineshmail" target="_blank"> GitHub </a>
+      <a href="https://github.com/dineshmail" target="_blank"><i class="fab fa-github"></i></a>
 
-      <a href="#" target="_blank"> LinkedIn </a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
 
-      <a href="mailto:dineshdinesh12zxas@gmail.com"> Email </a>
+      <a href="mailto:dineshdinesh12zxas@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
+</div>
 
     <p class="copyright">© 2026 Dinesh K | All Rights Reserved</p>
   </div>
