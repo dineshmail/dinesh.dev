@@ -1,169 +1,164 @@
 {% extends 'base.html' %}
-
-{% block title %}Home - Dinesh K{% endblock %}
-
-{% block content %}
-<section class="hero"data-aos="fade-up">
-    <div class="hero-content">
-    <h3>hello , im </h3>
+{% block title %}Home - Dinesh K
+{% endblock %}
+ {% block content %}
+<section class="hero" data-aos="fade-up">
+  <div class="hero-content">
+    <h3>hello , im</h3>
     <h1>Dinesh k</h1>
     <h2>Python Full Stack Developer</h2>
-    <p>I build web applications with Python and Django. web development from scratch to fullstack webapp ". fully customized design and develop and responsive ui/ux and seo optimized.  </p>
+    <p>
+      I build web applications with Python and Django. web development from
+      scratch to fullstack webapp ". fully customized design and develop and
+      responsive ui/ux and seo optimized.
+    </p>
     <div class="hero-btn">
-        <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#projects" class="btn-primary">View Projects</a>
 
-{% if resume %}
-<a href="{{ resume.pdf.url }}"  download class="btn-secondary">Download Resume</a>
-{% endif %}
-
+      {% if resume %}
+      <a href="{{ resume.pdf.url }}" download class="btn-secondary"
+        >Download Resume</a
+      >
+      {% endif %}
     </div>
-    </div>
+  </div>
 </section>
 <section class="about" data-aos="fade-right" id="about">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>I Am Dinesh k , An Electronics And Communication Engineer passionate about python fullstack development.</p>
-            <p>i build modern web applications using django,html,css,js and sql with a highly focus on user experience and performance.</p>
-            <p> my goal is to become a professional python fullstack developer for develop scalable products that solve real-world problems and create web applications that are not only functional but also visually appealing and user-friendly.</p>
-        </div>
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I Am Dinesh k , An Electronics And Communication Engineer passionate
+        about python fullstack development.
+      </p>
+      <p>
+        i build modern web applications using django,html,css,js and sql with a
+        highly focus on user experience and performance.
+      </p>
+      <p>
+        my goal is to become a professional python fullstack developer for
+        develop scalable products that solve real-world problems and create web
+        applications that are not only functional but also visually appealing
+        and user-friendly.
+      </p>
     </div>
+  </div>
 </section>
 <section class="skills" id="skills">
+  <h2>Skills</h2>
 
-    <h2>Skills</h2>
-
-    <div class="skills-grid" data-aos="zoom-in" >
-
-        <div class="skill-card">Python</div>
-        <div class="skill-card">Django</div>
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">Git & GitHub</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">REST API</div>
-
-    </div>
-
+  <div class="skills-grid" data-aos="zoom-in">
+    <div class="skill-card">Python</div>
+    <div class="skill-card">Django</div>
+    <div class="skill-card">HTML5</div>
+    <div class="skill-card">CSS3</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">Git & GitHub</div>
+    <div class="skill-card">SQL</div>
+    <div class="skill-card">REST API</div>
+  </div>
 </section>
 <section class="projects" id="projects">
-    
-{% for project in projects %}
+    <h2>My Projects</h2>
 
-<div class="project-card" data-aos="fade-up">
+    <div class="projects-grid">
 
-    <img
-        src="{{ project.image.url }}"
-        alt="{{ project.title }}"
-        class="project-image"
-    >
+        {% for project in projects %}
 
-    <h3>{{ project.title }}</h3>
+        <div class="project-card" data-aos="fade-up">
 
-    <p>{{ project.description }}</p>
+            <img
+                src="{{ project.image.url }}"
+                alt="{{ project.title }}"
+                class="project-image"
+            >
 
-    <div class="project-links">
+            <h3>{{ project.title }}</h3>
 
-        <a href="{{ project.github_link }}"
-           target="_blank">
-            GitHub
-        </a>
+            <p>{{ project.description }}</p>
 
-        {% if project.live_link %}
-        <a href="{{ project.live_link }}"
-           target="_blank">
-            Live Demo
-        </a>
-        {% endif %}
+            <div class="project-links">
+
+                <a href="{{ project.github_link }}" target="_blank">
+                    GitHub
+                </a>
+
+                {% if project.live_link %}
+                <a href="{{ project.live_link }}" target="_blank">
+                    Live Demo
+                </a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
 
     </div>
 
-</div>
-
-{% endfor %}
 </section>
 <section class="contact" data-aos="fade-left" id="contact">
-    <h2>Contact Me</h2>
-    {% if success %}
-<div class="success-message">
-    Message sent successfully!
-</div>
-{% endif %}
+  <h2>Contact Me</h2>
+  {% if success %}
+  <div class="success-message">Message sent successfully!</div>
+  {% endif %}
 
-    <form method="POST" class="contact-form">
-        {% csrf_token %}
+  <form method="POST" class="contact-form">
+    {% csrf_token %}
 
-        <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="name" placeholder="Your Name" required />
 
-        <input type="email" name="email" placeholder="Your Email" required>
+    <input type="email" name="email" placeholder="Your Email" required />
 
-        <input type="text" name="subject" placeholder="Subject" required>
+    <input type="text" name="subject" placeholder="Subject" required />
 
-        <textarea name="message" placeholder="Your Message"></textarea>
+    <textarea name="message" placeholder="Your Message"></textarea>
 
-        <button type="submit">
-            Send Message
-        </button>
-    </form>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 <section id="stats" data-aos="flip-left" class="stats">
-    <h2>My Achievements</h2>
+  <h2>My Achievements</h2>
 
-    <div class="stats-container">
-
-        <div class="stat-card">
-            <h3 class="counter" data-target="10">0</h3>
-            <p>Projects Completed</p>
-        </div>
-
-        <div class="stat-card">
-            <h3 class="counter" data-target="8">0</h3>
-            <p>Technologies Learned</p>
-        </div>
-
-        <div class="stat-card">
-            <h3 class="counter" data-target="100">0</h3>
-            <p>Hours of Coding</p>
-        </div>
-
-        <div class="stat-card">
-            <h3 class="counter" data-target="100">0</h3>
-            <p>Responsive Design</p>
-        </div>
-
+  <div class="stats-container">
+    <div class="stat-card">
+      <h3 class="counter" data-target="10">0</h3>
+      <p>Projects Completed</p>
     </div>
+
+    <div class="stat-card">
+      <h3 class="counter" data-target="8">0</h3>
+      <p>Technologies Learned</p>
+    </div>
+
+    <div class="stat-card">
+      <h3 class="counter" data-target="100">0</h3>
+      <p>Hours of Coding</p>
+    </div>
+
+    <div class="stat-card">
+      <h3 class="counter" data-target="100">0</h3>
+      <p>Responsive Design</p>
+    </div>
+  </div>
 </section>
 <footer class="footer">
+  <div class="footer-content">
+    <h3>Dinesh K</h3>
 
-    <div class="footer-content">
+    <p>Python Full Stack Developer</p>
 
-        <h3>Dinesh K</h3>
+    <div class="social-links">
+      <a href="https://github.com/dineshmail" target="_blank"> GitHub </a>
 
-        <p>Python Full Stack Developer</p>
+      <a href="#" target="_blank"> LinkedIn </a>
 
-        <div class="social-links">
-
-            <a href="https://github.com/dineshmail" target="_blank">
-                GitHub
-            </a>
-
-            <a href="#" target="_blank">
-                LinkedIn
-            </a>
-
-            <a href="mailto:dineshdinesh12zxas@gmail.com">
-                Email
-            </a>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 Dinesh K | All Rights Reserved
-        </p>
-
+      <a href="mailto:dineshdinesh12zxas@gmail.com"> Email </a>
     </div>
 
+    <p class="copyright">© 2026 Dinesh K | All Rights Reserved</p>
+  </div>
 </footer>
 
 <a href="#" class="back-to-top">↑</a>

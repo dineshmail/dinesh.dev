@@ -21,23 +21,39 @@
 
     <title>{% block title %}Dinesh K | Python Full Stack Developer{% endblock %}</title>
     <link rel="stylesheet"href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
-    <link rel="icon" href="{% static 'images/favicon_io(1).zip' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="canonical" href="https://your-domain.com">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}" defer></script>
+
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">dinesh.dev<div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+
+    <div class="logo">
+        dinesh.dev
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button id="theme-toggle">
+        🌙
+    </button>
+
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</nav>
     {% block content %}
     {% endblock %}
+<script src="{% static 'js/script.js' %}"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init({duration:1000,once:true});</script>
 </body>
