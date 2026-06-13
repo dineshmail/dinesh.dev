@@ -20,6 +20,7 @@
 <meta name="twitter:description" content="Python Full Stack Developer">
 
     <title>{% block title %}Dinesh K | Python Full Stack Developer{% endblock %}</title>
+    <link rel="stylesheet"href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
     <link rel="icon" href="{% static 'images/favicon_io(1).zip' %}" type="image/x-icon">
     <link rel="canonical" href="https://your-domain.com">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -37,5 +38,7 @@
     </nav>
     {% block content %}
     {% endblock %}
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:1000,once:true});</script>
 </body>
 </html>

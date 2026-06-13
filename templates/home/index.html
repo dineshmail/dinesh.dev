@@ -3,7 +3,7 @@
 {% block title %}Home - Dinesh K{% endblock %}
 
 {% block content %}
-<section class="hero">
+<section class="hero"data-aos="fade-up">
     <div class="hero-content">
     <h3>hello , im </h3>
     <h1>Dinesh k</h1>
@@ -19,7 +19,7 @@
     </div>
     </div>
 </section>
-<section class="about" id="about">
+<section class="about" data-aos="fade-right" id="about">
     <div class="about-container">
         <div class="about-text">
             <h2>About Me</h2>
@@ -33,7 +33,7 @@
 
     <h2>Skills</h2>
 
-    <div class="skills-grid">
+    <div class="skills-grid" data-aos="zoom-in" >
 
         <div class="skill-card">Python</div>
         <div class="skill-card">Django</div>
@@ -51,7 +51,7 @@
     
 {% for project in projects %}
 
-<div class="project-card">
+<div class="project-card" data-aos="fade-up">
 
     <img
         src="{{ project.image.url }}"
@@ -83,7 +83,7 @@
 
 {% endfor %}
 </section>
-<section class="contact" id="contact">
+<section class="contact" data-aos="fade-left" id="contact">
     <h2>Contact Me</h2>
     {% if success %}
 <div class="success-message">
@@ -107,7 +107,7 @@
         </button>
     </form>
 </section>
-<section id="stats" class="stats">
+<section id="stats" data-aos="flip-left" class="stats">
     <h2>My Achievements</h2>
 
     <div class="stats-container">
